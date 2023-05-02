@@ -1,0 +1,47 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { isRegistered} from "../../data/user";
+const img = "/Login.jpeg"
+const errors = { username: "", password: "" };
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get("username");
+    const password = data.get("password");
+    if (typeof name !== "string" || name.length < 1) {
+      errors.username += "Please enter a username. ";
+    }
+    if (typeof password !== "string" || password.length < 6) {
+      errors.password += "Password must be at least 6 characters. ";
+    }
+    if(isRegistered(name, password)){
+      localStorage.setItem("name", name.toString());
+      localStorage.setItem("password", password.toString());
+      data.delete("username");
+      data.delete("password");
+      return Astro.redirect("/Admin/");
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<DefaultLayout>
+    <section class="h-screen bg-cover grid place-items-center" style={{backgroundImage: `url(${img})`}}>
+        <form method="POST" class="flex flex-col border-2 p-4 rounded gap-4 bg-gray-950">
+            <label>
+                {errors.username && <p>{errors.username}</p>}
+                <input class="p-4 rounded bg-gray-900" type="text" name="username" placeholder="Username" required />
+            </label>
+            {errors.username && <p>{errors.username}</p>}
+            <label>
+                <input class="p-4 rounded bg-gray-900" type="password" name="password" placeholder="Password" required />
+            </label>
+            {errors.username && <p>{errors.username}</p>}
+            <button type="submit" class="p-4 bg-sky-500 hover:bg-sky-700 rounded">Log In</button>
+        </form>
+    </section>
+</DefaultLayout>

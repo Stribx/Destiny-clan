@@ -1,0 +1,21 @@
+---
+import Hero from "../../../components/Hero.astro";
+import StepSection from "../../../components/Section/StepSection.astro";
+import DefaultLayout from "../../../layouts/DefaultLayout.astro";
+const { pathname } = Astro.url;
+const {
+    text = "Vow Of The Disciple",
+	step = 0
+} = Astro.props
+---
+
+<DefaultLayout>
+    <Hero text={text} img={`${pathname + pathname.split('/').slice(-2, -1)[0]}.jpg`}  />
+    <section>
+        <img src={`${pathname}LootTable.jpg`} alt="LootTable">
+    </section>
+    <section>
+        <img src={`${pathname}Symbols.jpg`} alt="Symbols">
+    </section>
+    <StepSection step={step} />
+</DefaultLayout>

@@ -1,0 +1,15 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Hero from "../components/Hero.astro";
+import CardLink from "../components/Card/CardLink.astro";
+import SectionGrid from "../components/Section/SectionGrid.astro";
+const {
+	text = "Libérez-Jerusalem"
+} = Astro.props
+---
+<DefaultLayout>
+	<Hero text={text}/>
+	<SectionGrid>
+		<CardLink />
+	</SectionGrid>
+</DefaultLayout>

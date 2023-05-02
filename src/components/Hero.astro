@@ -1,0 +1,11 @@
+---
+const {text, img} = Astro.props
+---
+<section class={`h-screen flex items-center p-8 ${img && 'bg-cover'}`} style={img && {backgroundImage: `url(${img})`}}>
+    {text &&
+    <h1 class="lg:text-8xl md:text-left text-6xl text-center w-1/2">
+        {text}
+    </h1>
+    }
+    <slot />
+</section>

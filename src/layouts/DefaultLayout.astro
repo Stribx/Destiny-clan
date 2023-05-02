@@ -1,0 +1,18 @@
+---
+import NavBar from "../components/NavBar.astro";
+import SiteMeta from "../components/SiteMeta.astro";
+
+const {
+	title = "Libérez-Jerusalem"
+} = Astro.props
+---
+
+<html lang="en">
+	<SiteMeta title={title} />
+	<body class="bg-gray-950 text-white">
+		<NavBar />
+        <main>
+            <slot />
+        </main>
+	</body>
+</html>

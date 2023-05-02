@@ -1,0 +1,18 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import CardPages from "../../components/Card/CardPages.astro";
+import raids from "../../data/Raid";
+import SectionGrid from "../../components/Section/SectionGrid.astro";
+import Hero from "../../components/Hero.astro";
+---
+<DefaultLayout>
+    <Hero img={`/hero.jpg`}>
+        <SectionGrid>
+            {
+                raids.map((item)=>(
+                    <CardPages title={item.name}/>
+                ))
+            }
+            </SectionGrid>
+    </Hero>
+</DefaultLayout>

@@ -1,0 +1,13 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+
+const username = localStorage.getItem("name")
+const pwd = localStorage.getItem("password");
+---
+<DefaultLayout>
+    <div>
+        <h1>Admin</h1>
+        <p>{username}</p>
+        <p>{pwd}</p>
+    </div>
+</DefaultLayout>

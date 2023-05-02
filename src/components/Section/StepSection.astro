@@ -1,0 +1,8 @@
+---
+const {step} = Astro.props
+---
+{[...Array(step)].map((_, index) => (
+    <section class="h-screen">
+        <h1>{"Encounter" + (index+1)}</h1>
+    </section>
+))}
