@@ -1,7 +1,7 @@
 ---
 const {text, img} = Astro.props
 ---
-<section class={`flex items-center p-8 relative ${!img && 'top-12'}  ${img && 'bg-cover h-screen'}`} style={img && {backgroundImage: `url(${img})`}}>
+<section class={`flex items-center p-8 relative ${!img && 'top-12'}  ${(img || text) && 'bg-cover h-screen'}`} style={img && {backgroundImage: `url(${img})`}}>
     {text &&
     <h1 class="lg:text-8xl md:text-left text-6xl text-center w-1/2">
         {text}
