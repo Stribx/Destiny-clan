@@ -9,10 +9,15 @@ const {
 
 <html lang="en">
 	<SiteMeta title={title} />
-	<body class="bg-gray-950 text-white">
+	<body class="text-white">
 		<NavBar />
         <main>
             <slot />
         </main>
 	</body>
 </html>
+<style>
+	body{
+		background: #0D0D0D;
+	}
+</style>
