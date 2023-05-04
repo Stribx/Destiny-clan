@@ -1,16 +1,22 @@
 ---
 const { pathname } = Astro.url;
 ---
-<nav class="w-full p-4 flex justify-between flex-row-reverse absolute bg-black/50 z-50">
+<nav class="w-full p-4 flex justify-between flex-row-reverse absolute dark:bg-black/50 bg-white/50 shadow-2xl z-50 dark:text-white text-black">
     <div class="flex gap-4">
-        <a href="/Login/" class="hover:bg-white hover:text-black rounded-full p-1">
+        <a href="/Login/" class="dark:hover:bg-white hover:bg-black dark:hover:text-black hover:text-white rounded-full p-1">
             <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512">
                 <path fill="CurrentColor" d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm-5,21.797v-.797c0-2.757,2.243-5,5-5s5,2.243,5,5v.797c-1.501.769-3.201,1.203-5,1.203s-3.499-.434-5-1.203Zm11-.582v-.215c0-3.309-2.691-6-6-6s-6,2.691-6,6v.215c-3.008-1.965-5-5.362-5-9.215C1,5.935,5.935,1,12,1s11,4.935,11,11c0,3.853-1.992,7.25-5,9.215ZM12,5c-2.206,0-4,1.794-4,4s1.794,4,4,4,4-1.794,4-4-1.794-4-4-4Zm0,7c-1.654,0-3-1.346-3-3s1.346-3,3-3,3,1.346,3,3-1.346,3-3,3Z"/>
             </svg>
         </a>
-        <button class="hover:bg-white hover:text-black rounded-full p-1">
-            <svg class="h-8 w-8 hover:bg-white hover:text-black rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512">
+        <button switch-theme class="dark:hover:bg-white hover:bg-black dark:hover:text-black hover:text-white rounded-full p-1">
+            <svg data-icon class="h-8 w-8 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512">
                 <path fill="CurrentColor" d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm0-9c-2.21,0-4,1.79-4,4s1.79,4,4,4,4-1.79,4-4-1.79-4-4-4Zm.5-3.5V.5c0-.28-.22-.5-.5-.5s-.5,.22-.5,.5V4.5c0,.28,.22,.5,.5,.5s.5-.22,.5-.5Zm0,19v-4c0-.28-.22-.5-.5-.5s-.5,.22-.5,.5v4c0,.28,.22,.5,.5,.5s.5-.22,.5-.5ZM5,12c0-.28-.22-.5-.5-.5H.5c-.28,0-.5,.22-.5,.5s.22,.5,.5,.5H4.5c.28,0,.5-.22,.5-.5Zm19,0c0-.28-.22-.5-.5-.5h-4c-.28,0-.5,.22-.5,.5s.22,.5,.5,.5h4c.28,0,.5-.22,.5-.5Zm-6.15-5.15l3-3c.2-.2,.2-.51,0-.71s-.51-.2-.71,0l-3,3c-.2,.2-.2,.51,0,.71,.1,.1,.23,.15,.35,.15s.26-.05,.35-.15ZM3.85,20.85l3-3c.2-.2,.2-.51,0-.71s-.51-.2-.71,0l-3,3c-.2,.2-.2,.51,0,.71,.1,.1,.23,.15,.35,.15s.26-.05,.35-.15ZM6.85,6.85c.2-.2,.2-.51,0-.71L3.85,3.15c-.2-.2-.51-.2-.71,0s-.2,.51,0,.71l3,3c.1,.1,.23,.15,.35,.15s.26-.05,.35-.15Zm14,14c.2-.2,.2-.51,0-.71l-3-3c-.2-.2-.51-.2-.71,0s-.2,.51,0,.71l3,3c.1,.1,.23,.15,.35,.15s.26-.05,.35-.15Z"/>
+            </svg>
+            <svg data-icon class="h-8 w-8 rounded-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512">
+                <path fill="CurrentColor" d="M12,12c0-3.146,1.446-5.925,4.421-8.494,.47-.405,.679-1.014,.562-1.628-.118-.614-.538-1.101-1.124-1.303C14.22,.01,12.008-.153,10.083,.152,4.827,.987,.613,5.432,.066,10.723c-.657,6.352,3.744,12.117,10.017,13.125,.656,.105,1.321,.15,1.999,.153,1.362,0,2.701-.204,3.777-.576,.585-.202,1.005-.689,1.124-1.303,.118-.614-.092-1.223-.562-1.628-2.975-2.569-4.421-5.347-4.421-8.494Zm3.533,10.479c-.975,.336-2.197,.521-3.453,.521-.62-.005-1.235-.043-1.839-.14C4.491,21.937,.458,16.65,1.061,10.826,1.562,5.978,5.423,1.904,10.24,1.14c.597-.095,1.223-.141,1.847-.141,1.23,0,2.456,.179,3.446,.521,.243,.084,.418,.288,.467,.546,.05,.259-.037,.514-.232,.683-3.208,2.77-4.768,5.796-4.768,9.25s1.56,6.48,4.768,9.25c.195,.169,.282,.424,.232,.683-.049,.258-.224,.462-.467,.546Z"/>
+                <circle fill="CurrentColor" cx="17" cy="15" r="1"/>
+                <circle fill="CurrentColor" cx="23" cy="19" r="1"/>
+                <path fill="CurrentColor" d="M23.658,8.974c.204-.068,.342-.259,.342-.474s-.138-.406-.342-.474l-1.263-.421-.421-1.263c-.136-.408-.812-.408-.948,0l-.419,1.257-1.256,.393c-.205,.064-.347,.252-.351,.468s.13,.409,.333,.48l1.27,.449,.423,1.269c.068,.204,.259,.342,.474,.342s.406-.138,.474-.342l.421-1.263,1.263-.421Z"/>
             </svg>
         </button>
     </div>
@@ -22,3 +28,27 @@ const { pathname } = Astro.url;
         </svg>
     </a>}
 </nav>
+<script>
+    function toggleIcons(currentTheme) {
+      const icons = document.querySelectorAll('[data-icon]');
+      if (currentTheme === 'dark') {
+        icons[0].classList.add('hidden');
+        icons[1].classList.remove('hidden');
+      } else {
+        icons[0].classList.remove('hidden');
+        icons[1].classList.add('hidden');
+      }
+    }
+    const button = document.querySelector('[switch-theme]');
+    const root = document.documentElement;
+    let savedTheme = localStorage.getItem('theme') || 'light';
+    root.classList.add(savedTheme);
+    button.addEventListener('click', () => {
+      const currentTheme = root.classList.contains('dark') ? 'light' : 'dark';
+      toggleIcons(currentTheme);
+      root.classList.replace(savedTheme, currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      savedTheme = currentTheme;
+    });
+    toggleIcons(savedTheme);
+</script>  
